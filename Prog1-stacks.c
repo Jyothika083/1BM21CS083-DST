@@ -27,13 +27,10 @@ int pop()
 void display()
 {
 	int i;
-	if(top==-1);
+	if(top==-1)
 		printf("Stack is empty\n");
-	else
-	{
-		for(i=0;i<=top;i++)
-			printf("%d\t",st[i]);
-	}
+	for(i=0;i<=top;i++)
+		printf("%d\t",st[i]);
 }
 void main()
 {
