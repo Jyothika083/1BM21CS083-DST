@@ -45,7 +45,7 @@ void main()
 					insert_rear(q,item,&r);
 					break;
 			case 2: val_del=delete_front(q,&r,&f);
-					printf("\n%d item was deleted\n",val_del);
+					printf("\n%d was deleted\n",val_del);
 					break;
 			case 3: display(q,&r,&f);
 					break;
