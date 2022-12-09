@@ -27,6 +27,6 @@ int* canSeePersonsCount(int* heights, int heightsSize, int* returnSize){
     }
     for(i=0;i<heightsSize;i++)
         printf("%d",p[i]);
-    //returnSize=heightsSize;
+    *returnSize=heightsSize;
     return p;
 }
