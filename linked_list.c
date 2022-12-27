@@ -109,72 +109,85 @@ void display(NODE first)
 	}
 	
 }
-//NODE del_beg(NODE first)
-//{
-//	NODE temp;
-//	if(first==NULL)
-//	{
-//		printf("list is empty\n");
-//		return first;
-//	}
-//	temp=first;
-//	temp=temp->next;
-//	printf("Item deleted =%d",first->value);
-//	free(first);
-//	return temp;
-//	
-//}
-//NODE del_end(NODE first)
-//{
-//	NODE curr,prev;
-//	if(first==NULL)
-//	{
-//		printf("list is empty\n");
-//		return first;
-//	}
-//	prev=NULL;
-//	curr=first;
-//	while(curr->next!=NULL)
-//	{
-//		prev=curr;
-//		curr=curr->next;
-//	}
-//	prev->next=NULL;
-//	printf("%d",curr->value);
-//	free(curr);
-//	return first;
-//}
-//NODE del_value(NODE first,int key)
-//{
-//	NODE prev,curr;
-//	if(first==NULL)
-//	{
-//		printf("list is empty\n");
-//		return first;
-//	}
-//	curr=first;
-//	if(curr->value==key)
-//	{
-//		printf("Item deleted =%d",curr->value);
-//		first=first->next;
-//		free(curr);
-//		return first;
-//	}
-//	prev=NULL;
-//	curr=first;
-//	while(curr->value!-key && curr!=NULL)
-//	{
-//		prev=curr;
-//		curr=curr->next;
-//	}
-//}
+NODE del_beg(NODE first)
+{
+	NODE temp;
+	if(first==NULL)
+	{
+		printf("list is empty\n");
+		return first;
+	}
+	temp=first;
+	temp=temp->next;
+	printf("Item deleted =%d",first->value);
+	free(first);
+	return temp;
+	
+}
+NODE del_end(NODE first)
+{
+	NODE curr,prev;
+	if(first==NULL)
+	{
+		printf("list is empty\n");
+		return first;
+	}
+	prev=NULL;
+	curr=first;
+	while(curr->next!=NULL)
+	{
+		prev=curr;
+		curr=curr->next;
+	}
+	prev->next=NULL;
+	printf("%d",curr->value);
+	free(curr);
+	return first;
+}
+NODE del_value(NODE first,int key)
+{
+	NODE prev,curr;
+	if(first==NULL)
+	{
+		printf("list is empty\n");
+		return first;
+	}
+	curr=first;
+	if(curr->value==key)
+	{
+		printf("Item deleted =%d",curr->value);
+		first=first->next;
+		free(curr);
+		return first;
+	}
+	prev=NULL;
+	curr=first;
+	while(curr->value!=key && curr!=NULL)
+	{
+		prev=curr;
+		curr=curr->next;
+	}
+	if(curr->value==key)
+	{
+		prev->next=curr->next;
+		printf("Item deleted %d=",curr->value);
+		free(curr);
+		return first;
+	}
+	if(curr==NULL)
+	{
+		printf("End of list reached and item not found\n");
+		return first;
+	}
+	
+}
 int main()
 {
 	int pos,item,c;
 	NODE first=NULL;
 	while(1)
 	{
-		printf("\n1.Insert at beginning\n2.Insert at the end\n3.Insert at any given position\n4.Display\n");
+		printf("\n1.Insert at beginning\n2.Insert at the end\n3.Insert at any given position\n4.Display\n5.Delete at beginning\n6.Delete at the end\n7.Delete a specific element\n");
 		printf("Enter your choice :");
 		scanf("%d",&c);
 		switch(c)
@@ -194,6 +207,12 @@ int main()
 					first=insert_pos(first,item,pos);
 					break;
 			case 4:display(first);
+					break;
+			case 5:del_beg(first);
+					break;
+			case 6:del_end(first);
+					break;
+			case 7:del_value(first);
 					break;
 			default:printf("Invalid choice!!!");
 					exit(0);
