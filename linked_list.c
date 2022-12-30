@@ -44,7 +44,7 @@ NODE insert_end(NODE first,int item)
 	{
 		return new;
 	}
-	if(first==NULL)
+	if(first->next==NULL)
 	{
 		first->next=new;
 		return first;
@@ -208,13 +208,13 @@ int main()
 					break;
 			case 4:display(first);
 					break;
-			case 5:del_beg(first);
+			case 5:first=del_beg(first);
 					break;
-			case 6:del_end(first);
+			case 6:first=del_end(first);
 					break;
 			case 7:printf("Enter the item to be deleted :");
 				scanf("%d",&item);
-				del_value(first,item);
+				first=del_value(first,item);
 					break;
 			default:printf("Invalid choice!!!");
 					exit(0);
