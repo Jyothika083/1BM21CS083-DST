@@ -166,6 +166,11 @@ NODE del_value(NODE first,int key)
 	{
 		prev=curr;
 		curr=curr->next;
+		if(curr==NULL)
+		{
+			printf("End of list reached and item not found\n");
+			return first;
+		}
 	}
 	if(curr->value==key)
 	{
@@ -174,11 +179,7 @@ NODE del_value(NODE first,int key)
 		free(curr);
 		return first;
 	}
-	if(curr==NULL)
-	{
-		printf("End of list reached and item not found\n");
-		return first;
-	}
+	
 	
 }
 int main()
