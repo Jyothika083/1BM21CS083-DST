@@ -212,7 +212,9 @@ int main()
 					break;
 			case 6:del_end(first);
 					break;
-			case 7:del_value(first);
+			case 7:printf("Enter the item to be deleted :");
+				scanf("%d",&item);
+				del_value(first,item);
 					break;
 			default:printf("Invalid choice!!!");
 					exit(0);
