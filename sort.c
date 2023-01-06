@@ -100,7 +100,7 @@ int main()
 {
 	int item,c;
 	int count1=0,count2=0;
-	NODE first1=NULL,first2=NULL,first3=NULL;
+	NODE first1=NULL,first2=NULL;
 	while(1)
 	{
 		printf("\n1.Insert at beginning or list1\n2.Insert at beginning or list2\n3.Sort list1\n\n3.Sort list2\n5.Concatenate\n6.Display\n");
@@ -122,7 +122,7 @@ int main()
                     		break;
 			case 2:first2=sort(first2,count2);
                     		break;
-			case 2:first3=sort(first2,count2);
+			case 2:first1=sort(first2,count2);
                     		break;
             		case 3:display(first);
                     		break;
