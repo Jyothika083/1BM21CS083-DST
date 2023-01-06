@@ -103,7 +103,7 @@ int main()
 	NODE first1=NULL,first2=NULL;
 	while(1)
 	{
-		printf("\n1.Insert at beginning or list1\n2.Insert at beginning or list2\n3.Sort list1\n\n3.Sort list2\n5.Concatenate\n6.Display\n");
+		printf("\n1.Insert at beginning for list1\n2.Insert at beginning for list2\n3.Sort list1\n\n3.Sort list2\n5.Concatenate(output is stored in list1)\n6.Reverse list1\n7.Reverse list2\n8.Display list1\n9.Display list2\n");
 		printf("Enter your choice :");
 		scanf("%d",&c);
 		switch(c)
@@ -113,19 +113,25 @@ int main()
 				first1=insert_beg(first1,item);
 				count1++;
 				break;
-			case 1:printf("Enter the item to be inserted :");
+			case 2:printf("Enter the item to be inserted :");
 				scanf("%d",&item);
 				first2=insert_beg(first2,item);
 				count2++;
 				break;
-			case 2:first1=sort(first1,count1);
+			case 3:first1=sort(first1,count1);
                     		break;
-			case 2:first2=sort(first2,count2);
+			case 4:first2=sort(first2,count2);
                     		break;
-			case 2:first1=sort(first2,count2);
+			case 5:first1=concatenate(first1,first2);
                     		break;
-            		case 3:display(first);
+			case 6:first1=reverse(first1);
+                    		break;	
+			case 7:first2=reverse(first2);
+                    		break;	
+            		case 8:display(first1);
                     		break;
+			case 9:display(first2);
+                    		break;	
 			default:printf("Invalid choice!!!");
 					exit(0);
 		}
