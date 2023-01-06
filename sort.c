@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-int count;
+
 struct node
 {
 	int value;
@@ -26,14 +26,14 @@ NODE insert_beg(NODE first,int item)
 	new->next=NULL;
 	if(first==NULL)
 	{
-        count++;
+        	count++;
 		return new;
 	}
 	else
 	{
 		new->next=first;
 		first=new;
-        count++;
+        	count++;
 		return first;
 	}
 }
@@ -52,7 +52,7 @@ void display(NODE first)
 	}
 	
 }
-NODE sort(NODE first)
+NODE sort(NODE first,int count)
 {
     NODE curr=first;
     int temp,i,j;
@@ -75,25 +75,57 @@ NODE sort(NODE first)
     return first;
     
 }
+NODE concatenate(NODE first1, NODE first2)
+{
+	NODE temp;
+	temp=first1;
+	if(first1==NULL && first2==NULL)
+	{
+		return NULL;
+	}
+	if(first1==NULL)
+	{
+		return first2;
+	}
+	while(temp->next!=NULL)
+	{
+		temp=temp->next;
+	}
+	temp->next=first2;
+	return first1;
+}
+	
+
 int main()
 {
 	int item,c;
-	NODE first=NULL;
+	int count1=0,count2=0;
+	NODE first1=NULL,first2=NULL,first3=NULL;
 	while(1)
 	{
-		printf("\n1.Insert at beginning\n2.Sort\n3.Display\n");
+		printf("\n1.Insert at beginning or list1\n2.Insert at beginning or list2\n3.Sort list1\n\n3.Sort list2\n5.Concatenate\n6.Display\n");
 		printf("Enter your choice :");
 		scanf("%d",&c);
 		switch(c)
 		{
 			case 1:printf("Enter the item to be inserted :");
-					scanf("%d",&item);
-					first=insert_beg(first,item);
-					break;
-			case 2:first=sort(first);
-                    break;
-            case 3:display(first);
-                    break;
+				scanf("%d",&item);
+				first1=insert_beg(first1,item);
+				count1++;
+				break;
+			case 1:printf("Enter the item to be inserted :");
+				scanf("%d",&item);
+				first2=insert_beg(first2,item);
+				count2++;
+				break;
+			case 2:first1=sort(first1,count1);
+                    		break;
+			case 2:first2=sort(first2,count2);
+                    		break;
+			case 2:first3=sort(first2,count2);
+                    		break;
+            		case 3:display(first);
+                    		break;
 			default:printf("Invalid choice!!!");
 					exit(0);
 		}
