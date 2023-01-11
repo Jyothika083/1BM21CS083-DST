@@ -132,6 +132,11 @@ NODE del_end(NODE first)
 		printf("list is empty\n");
 		return first;
 	}
+	if(first->next==NULL)
+    	{
+        	free(first);
+        	return first;
+    	}
 	prev=NULL;
 	curr=first;
 	while(curr->next!=NULL)
