@@ -42,9 +42,9 @@ NODE insert_end(NODE first,int c,int e)
 	last->next=new;
 	return first;
 }
-NODE addpoly(NODE first1,NODE first2)
+NODE addpoly(NODE head1,NODE head2)
 {
-    NODE res;
+    NODE res,first1=head1,first2=head2;
     while (first1!=NULL && first2!=NULL)
     {
         if(first1->exp==first2->exp)
