@@ -51,9 +51,9 @@ void display(NODE first)
 	}
 	printf("\n");
 }
-NODE add(NODE first1, NODE first2)
+NODE add(NODE head1, NODE head2)
 {
-    NODE res = NULL,temp;
+    NODE res = NULL,first1=head1,first2=head2;
     int sum = 0, c = 0,op1,op2;
     while (first1 != NULL || first2 != NULL)
     {
