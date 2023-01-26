@@ -59,8 +59,8 @@ void traversePostorder(NODE root)
 {  
     if (root == NULL)  
         return;    
-    traversePreorder(root->left);  
-    traversePreorder(root->right);  
+    traversePostorder(root->left);  
+    traversePostorder(root->right);  
     printf(" %d ", root->value);
 }  
 void main()
