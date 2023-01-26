@@ -16,16 +16,13 @@ void push(int st[],int *top)
 		st[*top]=item;
 	}
 }
-int pop(int st[],int *top)
+void pop(int st[],int *top)
 {
-	int del_item;
 	if(*top==-1)
 		printf("Stack underflow\n");
 	else
 	{
-		del_item=st[*top];
-		(*top)--;
-		return del_item;
+		printf("\n%d item was deleted",st[(*top)--]);
 	}
 }
 void display(int st[],int *top)
@@ -48,8 +45,7 @@ void main()
 		{
 			case 1: push(st,&top);
 					break;
-			case 2: val_del=pop(st,&top);
-					printf("\n%d item was deleted",val_del);
+			case 2: pop(st,&top);
 					break;
 			case 3: display(st,&top);
 					break;
